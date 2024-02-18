@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>RFC index</title>
+  <script src="d3.v3.min.js" charset="utf-8"></script>
+  <style>
+    svg { width: 2260px; height: 6020px; border: 1px solid black; background-color: #FFF }
+    .marker{ fill: green; }
+    .label { font-size: 9px; fill: #333333; }
+    .obsoleteLine { stroke: #840; stroke-width: 1; }
+    .updateLine { stroke: #66F; stroke-width: 1; }
+    .tip {	
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 9999;
+      visibility: hidden;
+      border: 1px solid white;
+      border-radius: 6px;
+      background-color: white;
+      width: 200px;
+      height: 80px;
+      padding: 3px;
+      overflow: hidden;
+      text-align: left;
+      font-size: 10px;
+      font-family: Tohama, Optima, Helvetica;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+<h1>RFC index</h1>
+<p>brown: obsoletes, blue: updates</p>
+<div id="rfc_index"></div>
+<script>
+var id_max=7600;
+var x_max=2200;
+var y_max=6000;
+var x_offset=10;
+var y_offset=10;
+var rfc_uri="http://www.ring.gr.jp/archives/doc/RFC/";
+//var rfc_uri="https://tools.ietf.org/html/";
+var tooltip;
+function get_y(rfc_id){
+  return parseInt(rfc_id) / (id_max / y_max) + y_offset;
+};
+function get_x(x){
+  if (x <= 0)
+     x = 0;
+  else if (x_max <= x)
+     x = x_max;
+  return x + x_offset;
+};
+function get_color(d){
+  var color = '#FFF';
+  if (d.status.startsWith('STD')) {
+    color = '#4F4';
+  }
+  else if (d.status == 'DS') {
+    color = '#4DD';
+  }
+  else if (d.status == 'PS') {
+    color = '#66F';
+  }
+  else if (d.status.startsWith('BCP')) {
+    color = '#F4F';
+  }
+  else if (d.status == 'E') {
+    color = '#EE0';
+  }
+  else if (d.status == 'I') {
+    color = '#FA0';
+  }
+  else if (d.status.startsWith('FYI')) {
+    color = '#FA0';
+  }
+  else if (d.status == 'H') {
+    color = '#666';
+  }
+  else if (d.status == 'U') {
+    color = '#999';
+  }
+  if (d.obsoleted == 1) {
+    color = '#840';
+  }
+  return color;
+}
+function enable_tooltip(tooltip, d){
+  var status = d.status;
+  var bgcolor = '#FFF';
+  if (d.status.startsWith('STD')) {
+    status = 'Internet Standard (' + d.status + ')';
+    bgcolor = '#4F4';
+  }
+  else if (d.status == 'DS') {
+    status = 'Draft Standard';
+    bgcolor = '#4DD';
+  }
+  else if (d.status == 'PS') {
+    status = 'Proposed Standard';
+    bgcolor = '#66F';
+  }
+  else if (d.status.startsWith('BCP')) {
+    status = 'Best Current Practice (' + d.status + ')'
+    bgcolor = '#F4F';
+  }
+  else if (d.status == 'E') {
+    status = 'Experimental'
+    bgcolor = '#EE0';
+  }
+  else if (d.status == 'I') {
+    status = 'Informational'
+    bgcolor = '#FA0';
+  }
+  else if (d.status.startsWith('FYI')) {
+    status = 'Informational (' + d.status + ')'
+    bgcolor = '#FA0';
+  }
+  else if (d.status == 'H') {
+    status = 'Histric'
+    bgcolor = '#666';
+  }
+  else if (d.status == 'U') {
+    status = 'Unknown'
+    bgcolor = '#FFF';
+  }
+  if (d.obsoleted == 1) {
+    bgcolor = '#840';
+  }
+  tooltip
+    .style("left", get_x(d.x) +"px")
+    .style("top", (get_y(d.id) + 40) +"px")
+    .style("background-color", bgcolor)
+    .style("visibility", "visible")
+    .text("RFC " + d.id + " " + d.title + ". (Status: " + status + ")")
+}
+function disable_tooltip(tooltip){
+  tooltip.style("visibility", "hidden");
+}
+d3.json("rfc.json", function(error, data){
+  var dataSet = data;
+
+  var rfc_index = d3.select("#rfc_index")
+    .append("svg")
+    .attr("id", "rfcindex")
+    .attr("xmlns", "http://www.w3.org/2000/svg")
+    .attr("xlink", "http://www.w3.org/1999/xlink")
+
+  var tooltip = d3.select("body")
+    .append("div")
+    .attr("class", "tip")
+
+  var force = d3.layout.force()
+    .nodes(dataSet.nodes)
+    .links(dataSet.links)
+    .size([x_max, y_max])
+    .linkDistance(30)
+    .linkStrength(10)
+    .friction(0)
+    .charge(-100)
+    .gravity(0.0001)
+    .start()
+
+  var link = rfc_index
+    .selectAll("line")
+    .data(dataSet.links)
+    .enter()
+    .append("line")
+    .attr("class", function(d) { return d.type=='o' ? "obsoleteLine" : "updateLine"; })
+    .attr("x1", function(d){ return d.source; })
+    .attr("x2", function(d){ return d.target; })
+
+  var node = rfc_index
+    .selectAll("circle")
+    .data(dataSet.nodes)
+    .enter()
+    .append("circle")
+    .attr("class", "marker")
+    .attr("r", 5)
+    .style("fill", function(d){ return get_color(d); })
+    .on("mouseover", function(d) {
+      enable_tooltip(tooltip, d);
+    })
+    .on("mouseout", function(d) {
+      disable_tooltip(tooltip);
+    })
+    .call(force.drag)
+
+  var text = rfc_index
+    .selectAll("a")
+    .data(dataSet.nodes)
+    .enter()
+    .append("a")
+    .attr({"xlink:href": "#"})
+    .attr("class", "label")
+    .on("click", function(d){ 
+      d3.select(this) 
+        .attr({"xlink:href": rfc_uri + "rfc" + d.id});
+    })
+    .append("text")
+    .text(function(d,i){ return d.id;})
+    .on("mouseover", function(d) {
+      enable_tooltip(tooltip, d);
+    })
+    .on("mouseout", function(d) {
+      disable_tooltip(tooltip);
+    })
+
+  force.on("tick", function(){
+    link
+      .attr("x1", function(d) { return get_x(d.source.x); })
+      .attr("y1", function(d) { return get_y(d.source.id); })
+      .attr("x2", function(d) { return get_x(d.target.x); })
+      .attr("y2", function(d) { return get_y(d.target.id); });
+    node
+      .attr("cx", function(d) { return get_x(d.x); })
+      .attr("cy", function(d) { return get_y(d.id); });
+    text
+      .attr("x", function(d) { return get_x(d.x) + 3; })
+      .attr("y", function(d) { return get_y(d.id) - 3; });
+  });
+
+});
+
+
+</script>
+</body>
+</html>

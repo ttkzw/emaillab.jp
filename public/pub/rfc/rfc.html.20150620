@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>RFC index</title>
+  <script src="d3.v3.min.js" charset="utf-8"></script>
+  <style>
+    svg { width: 1260px; height: 3020px; border: 1px solid black; background-color: #FFF }
+    .marker{ fill: green; }
+    .label { font-size: 3px; fill: #333333; }
+    .obsoleteLine { stroke: #A52A2A; stroke-width: 1; }
+    .updateLine { stroke: blue; stroke-width: 1; }
+  </style>
+</head>
+<body>
+<h1>RFC index</h1>
+<p>brown: obsoletes, blue: updates</p>
+<svg id="rfc_index" xmlns: "http://www.w3.org/2000/svg", xlink: "http://www.w3.org/1999/xlink"></svg>
+<script>
+var id_max=7600;
+var x_max=1200;
+var y_max=3000;
+var x_offset=10;
+var y_offset=10;
+function yaxis(rfc_id){
+  return parseInt(rfc_id.replace(/^RFC0*/,"")) / (id_max / y_max) + y_offset;
+};
+function xaxis(x){
+  if (x <= 0)
+     x = 0;
+  else if (x_max <= x)
+     x = x_max;
+  return x + x_offset;
+};
+
+d3.json("rfc.json", function(error, data){
+  var dataSet = data;
+
+  var force = d3.layout.force()
+    .nodes(dataSet.nodes)
+    .links(dataSet.links)
+    .size([x_max, y_max])
+    .linkDistance(30)
+    .linkStrength(10)
+    .friction(0)
+    .charge(-100)
+    .gravity(0.0001)
+    .start()
+
+  var link = d3.select("#rfc_index")
+    .selectAll("line")
+    .data(dataSet.links)
+    .enter()
+    .append("line")
+    .attr("class", function(d,i) { return d.type=='o' ? "obsoleteLine" : "updateLine"; })
+    .attr("x1", function(d,i){ return d.source; })
+    .attr("x2", function(d,i){ return d.target; })
+
+  var node = d3.select("#rfc_index")
+    .selectAll("circle")
+    .data(dataSet.nodes)
+    .enter()
+    .append("circle")
+    .attr("class", "marker")
+    .attr("r", 4)
+    .call(force.drag)
+
+  var text = d3.select("#rfc_index")
+    .selectAll("text")
+    .data(dataSet.nodes)
+    .enter()
+    .append("text")
+    .attr("class", "label")
+    .text(function(d,i){ return d.name.replace(/^RFC0*/,"");})
+
+  force.on("tick", function(){
+    link
+      .attr("x1", function(d) { return xaxis(d.source.x); })
+      .attr("y1", function(d) { return yaxis(d.source.name); })
+      .attr("x2", function(d) { return xaxis(d.target.x); })
+      .attr("y2", function(d) { return yaxis(d.target.name); });
+    node
+      .attr("cx", function(d) { return xaxis(d.x); })
+      .attr("cy", function(d) { return yaxis(d.name); });
+    text
+      .attr("x", function(d) { return xaxis(d.x) + 3; })
+      .attr("y", function(d) { return yaxis(d.name) - 3; });
+  });
+
+});
+
+
+</script>
+</body>
+</html>
