@@ -1,5 +1,7 @@
 ---
 title: SpamAssassin日本語対応パッチ
+sidebar:
+    order: 8
 ---
 最新版はSpamAssassin 3.4.1に対するパッチです。
 

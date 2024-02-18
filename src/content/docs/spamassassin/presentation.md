@@ -1,5 +1,7 @@
 ---
 title: SpamAssassinの資料
+sidebar:
+    order: 10
 ---
 
 - [60分間スパムクッキング - SpamAssassin(hbstudy #14発表資料)](/docs/spamassassin/SpamAssassin-hbstudy-20100821.pdf)

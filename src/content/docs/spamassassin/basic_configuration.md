@@ -1,5 +1,7 @@
 ---
 title: SpamAssassinの基本設定
+sidebar:
+    order: 4
 ---
 ## 設定ファイル
 

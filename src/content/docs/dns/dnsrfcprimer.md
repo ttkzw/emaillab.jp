@@ -1,5 +1,7 @@
 ---
 title: DNSのRFCの歩き方
+sidebar:
+    order: 3
 ---
 「DNSのRFCの歩き方（短縮版）」(2016年版)
 

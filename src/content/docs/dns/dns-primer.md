@@ -1,5 +1,7 @@
 ---
 title: DNS再入門
+sidebar:
+    order: 2
 ---
 [DNS Summer Days 2014](http://dnsops.jp/event20140626.html)の講義資料です。
 

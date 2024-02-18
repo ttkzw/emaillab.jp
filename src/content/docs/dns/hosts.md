@@ -1,5 +1,7 @@
 ---
 title: HOSTS.TXT
+sidebar:
+    order: 5
 ---
 ## hostname table
 
@@ -22,8 +24,10 @@ title: HOSTS.TXT
 <ul>
  	<li>http://www.postel.org/pipermail/internet-history/2008-January.txt</li>
 </ul>
-<h2>HOSTS.TXT (NCP, before TCP/IP)</h2>
-<table border="1">
+
+## HOSTS.TXT (NCP, before TCP/IP)
+
+<table>
 <tbody>
 <tr>
 <th>Date</th>
@@ -60,8 +64,10 @@ title: HOSTS.TXT
  	<li>*2) http://www.saildart.org/HOSTS.TXT[HST,NET]2</li>
  	<li>*3) http://www.saildart.org/HOSTS.TXT[HST,NET]4</li>
 </ul>
-<h2>HOSTS.TXT (TCP/IP, before DOMAIN NAME)</h2>
-<table border="1">
+
+## HOSTS.TXT (TCP/IP, before DOMAIN NAME)
+
+<table>
 <tbody>
 <tr>
 <th>Date</th>
@@ -174,9 +180,12 @@ title: HOSTS.TXT
  	<li>*10) http://www.saildart.org/HOSTS.TXT[HST,NET]13</li>
  	<li>*11) http://pdp-10.trailing-edge.com/tops20_v6_1_tcpip_installation_tp_ft6/06/new-system/hosts.txt (edited)</li>
 </ul>
-<h2>HOSTS.TXT (TCP/IP, DOMAIN NAME(The Initial and Temporary Domain))</h2>
+
+## HOSTS.TXT (TCP/IP, DOMAIN NAME(The Initial and Temporary Domain))
+
 See also RFC 897, RFC 881, and RFC 921.
-<table border="1">
+
+<table>
 <tbody>
 <tr>
 <th>Date</th>
@@ -289,9 +298,12 @@ See also RFC 897, RFC 881, and RFC 921.
  	<li>*1) http://www.saildart.org/HOSTS.425[HST,NET]</li>
  	<li>*1) http://www.saildart.org/HOSTS.444[HST,NET]</li>
 </ul>
-<h2>HOSTS.TXT (TCP/IP, DOMAIN NAME)</h2>
+
+## HOSTS.TXT (TCP/IP, DOMAIN NAME)
+
 Some host tables were modified.
-<table border="1">
+
+<table>
 <tbody>
 <tr>
 <th>Date</th>
@@ -422,11 +434,14 @@ Some host tables were modified.
  	<li>*1) http://www.saildart.org/HOSTS.TXT[HST,NET]29</li>
  	<li>*4) http://pdp-10.trailing-edge.com/SRI_NIC_PERM_FS_1_19910112/01/system/hosts.txt</li>
 </ul>
-<h2>HOSTS.TXT (TCP/IP, DOMAIN NAME, NIC.DDN.MIL)</h2>
+
+## HOSTS.TXT (TCP/IP, DOMAIN NAME, NIC.DDN.MIL)
+
 These were available online at host NIC.DDN.MIL.
 
 Some host tables were modified.
-<table border="1">
+
+<table>
 <tbody>
 <tr>
 <th>Date</th>
@@ -548,7 +563,9 @@ Some host tables were modified.
  	<li>*12) ftp://ftp2.de.freebsd.org/pub/misc/standards/infomagic/inet/netinfo/hosts.txt</li>
  	<li>*13) http://cd.textfiles.com/group42/INTERNET/HOSTS.TXT</li>
 </ul>
-<h2>RFCs</h2>
+
+## RFCs
+
 <ul>
  	<li><a href="http://www.rfc-editor.org/rfc/rfc606.txt">RFC 606 Host Names On-line</a></li>
  	<li><a href="http://www.rfc-editor.org/rfc/rfc608.txt">RFC 608 HOST NAMES ON-LINE</a></li>

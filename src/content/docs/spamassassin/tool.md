@@ -1,5 +1,7 @@
 ---
 title: SpamAssassin付属ツールの紹介
+sidebar:
+    order: 6
 ---
 SpamAssassinが標準で提供しているツールを紹介します。
 

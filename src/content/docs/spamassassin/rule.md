@@ -1,5 +1,7 @@
 ---
 title: SpamAssassinのルールの書き方
+sidebar:
+    order: 7
 ---
 ## 設定ファイル
 

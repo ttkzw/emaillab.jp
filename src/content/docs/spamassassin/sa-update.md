@@ -1,5 +1,7 @@
 ---
 title: SpamAssassinルールファイル自動更新(sa-update)
+sidebar:
+    order: 9
 ---
 ## 日本向けルールファイル
 

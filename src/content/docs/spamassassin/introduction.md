@@ -1,5 +1,7 @@
 ---
 title: SpamAssassinの紹介
+sidebar:
+    order: 2
 ---
 ## SpamAssassinとは
 

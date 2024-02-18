@@ -1,5 +1,7 @@
 ---
 title: SpamAssassinのインストール
+sidebar:
+    order: 3
 ---
 ここでは、SpamAssassin 3.4系列のインストールについて説明します。特に日本語パッチについて説明します。
 

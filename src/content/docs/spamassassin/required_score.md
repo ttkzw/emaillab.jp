@@ -1,5 +1,7 @@
 ---
 title: SpamAssassinのスコア調整
+sidebar:
+    order: 6
 ---
 ## required_scoreの設定値の推奨値
 

@@ -1,5 +1,7 @@
 ---
 title: DNS
+sidebar:
+    order: 1
 ---
 
 - [DNS再入門](/dns/dns-primer/)
