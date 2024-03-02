@@ -8,8 +8,7 @@
 
 ```
 git clone https://github.com/ttkzw/emaillab.jp.git
-npm install astro@latest
-npx astro add starlight
+npm install
 ```
 
 ## 静的ファイル生成

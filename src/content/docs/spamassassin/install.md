@@ -36,7 +36,7 @@ SpamAssassinの公式サイトからSpamAssassinのtarボールをダウンロ�
 
 日本語パッチを次の場所からダウンロードします。
 
-- http://spamassassin.emaillab.jp/pub/ja-patch/sa3.4/
+- https://github.com/heartbeatsjp/spamassassin_ja
 
 SpamAssassinのtar ballを展開後、日本語パッチを当ててください。
 
