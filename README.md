@@ -17,3 +17,15 @@ npm install
 npm run build
 ```
 
+## 開発用サーバーの起動
+
+```
+npm run dev
+```
+
+## アップデート
+
+```
+npx @astrojs/upgrade
+```
+
