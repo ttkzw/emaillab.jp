@@ -1,7 +1,9 @@
 ---
 title: SpamAssassin
 sidebar:
-    order: 1
+    order: 0
+    pagefind: false
+    hidden: true
 ---
 
 SpamAssassinに関して紹介します。

@@ -1,15 +1,9 @@
 ---
 title: Mutt patches
 ---
-<ul>
-<li><a href="#wcwidth">wcwidth</a></li>
-<li><a href="#cjk_width_tree_chars">cjk_width_tree_chars</a></li>
-<li><a href="#create_rfc2047_params">create_rfc2047_params</a></li>
-<li><a href="#sanitize_ja_char">sanitize_ja_char</a></li>
-<li><a href="#delete_prefix">delete_prefix</a></li>
-</ul>
 
-<h3 id="wcwidth">wcwidth</h3>
+## wcwidth
+
 <ul>
 <li><a href="/pub/mutt/1.5/patch-1.5.23.tt.wcwidth.1.gz">patch-1.5.23.tt.wcwidth.1.gz</a> (<a href="/pub/mutt/1.5/patch-1.5.23.tt.wcwidth.1.gz.sha1">sha1</a>)</li>
 </ul>
@@ -26,7 +20,8 @@ When this option is set, characters in the East Asian Ambiguous (A)  category as
 Note: this option only affects in UTF-8 encoding.</dd>
 </dl>
 
-<h3 id="cjk_width_tree_chars">cjk_width_tree_chars</h3>
+## cjk_width_tree_chars
+
 <ul>
 <li><a href="/pub/mutt/1.5/patch-1.5.23.tt.cjk_width_tree_chars.1.gz">patch-1.5.23.tt.cjk_width_tree_chars.1.gz</a> (<a href="/pub/mutt/1.5/patch-1.5.23.tt.cjk_width_tree_chars.1.gz.sha1">sha1</a>)</li>
 </ul>
@@ -42,7 +37,7 @@ If set, Mutt will use the result of cjk_width as a column width of WACS characte
 Note: this option only affects in UTF-8 encoding.</dd>
 </dl>
 
-<h3 id="create_rfc2047_params">create_rfc2047_params</h3>
+## create_rfc2047_params
 
 <ul>
 <li><a href="/pub/mutt/1.5/patch-1.5.23.tt.create_rfc2047_params.1.gz">patch-1.5.23.tt.create_rfc2047_params.1.gz</a> (<a href="/pub/mutt/1.5/patch-1.5.23.tt.create_rfc2047_params.1.gz.sha1">sha1</a>)</li>
@@ -58,7 +53,8 @@ Note: this use of RFC 2047's encoding is explicitly prohibited by the standard. 
 </dd>
 </dl>
 
-<h3 id="sanitize_ja_char">sanitize_ja_char</h3>
+## sanitize_ja_char
+
 <ul>
 <li><a href="/pub/mutt/1.5/patch-1.5.23.tt.sanitize_ja_char.1.gz">patch-1.5.23.tt.sanitize_ja_char.1.gz</a> (<a href="/pub/mutt/1.5/patch-1.5.23.tt.sanitize_ja_char.1.gz.sha1">sha1</a>)</li></ul>
 <dl>
@@ -71,7 +67,8 @@ When  set, Japanese ”platform dependent characters” (illegal characters for 
 This fixes another Japanese encoding issue. In case $charset is set to ”EUC-JP”, which does not contain JIS X 0201 roman character set, the JIS X 0201 roman part of received messages encoded in iso-2022-jp can not be converted to EUC-JP.  On the other hand, the ASCII part can not be converted to Shift_JIS, which does not contain ASCII character set. Thus, the converted characters are garbled in these cases. When this option is set, the JIS X 0201 roman escape sequence and the ASCII escape sequence are replaced appropriately to prevent the output from being garbled.<dd>
 </dl>
 
-<h3 id="delete_prefix">delete_prefix</h3>
+## delete_prefix
+
 <ul>
 <li><a href="/pub/mutt/1.5/patch-1.5.23.tt+yy.delete_prefix.1.gz">patch-1.5.23.tt+yy.delete_prefix.1.gz</a> (<a href="/pub/mutt/1.5/patch-1.5.23.tt+yy.delete_prefix.1.gz.sha1">sha1</a>)</li>
 </ul>

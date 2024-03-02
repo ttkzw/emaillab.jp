@@ -1,7 +1,7 @@
 ---
 title: SpamAssassinの紹介
 sidebar:
-    order: 2
+    order: 1
 ---
 ## SpamAssassinとは
 
@@ -44,9 +44,9 @@ Linux Magazineを発行しているLINUX NEW MEDIAが主催したLinux New Media
 
 ## 日本語対応
 
-国際化対応の機能がSpamAssassin 3.2.0から追加されていますが、残念ながら正しく機能していません。気がついていますが、すみません、放置しています。
-しかし、日本SpamAssassinユーザ会の有志により開発された日本語対応パッチをあてると日本語対応になります。
+SpamAssassin 3.4.2に対する日本語対応状況は次のサイトをご覧ください。
 
-この文書の執筆時点では日本語対応パッチは筆者のサイトで配布しています。
-http://spamassassin.emaillab.jp/pub/ja-patch/
-このパッチを当てると、日本語のルールを書くことができ、また、ベイズフィルタの学習精度も非常に良くなります。そのため、日本語のスパムの検出精度が非常に上がります。
+- [SpamAssassinの日本語対応状況](https://heartbeats.jp/hbblog/2018/10/spamassassin.html)
+
+なお、SpamAssassin 3.4.2に対する日本語パッチは滝澤がハードビーツに所属しているときに開発したものです。現在はハートビーツを退職しているため、このパッチについてハートビーツに問い合わせないようにしてください。
+

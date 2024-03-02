@@ -1,7 +1,8 @@
 ---
 title: DNS
 sidebar:
-    order: 1
+    pagefind: false
+    hidden: true
 ---
 
 - [DNS再入門](/dns/dns-primer/)
