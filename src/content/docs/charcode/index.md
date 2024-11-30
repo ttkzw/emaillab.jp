@@ -1,5 +1,5 @@
 ---
-title: 文字コード
+title: Character Codes
 sidebar:
     pagefind: false
     hidden: true
