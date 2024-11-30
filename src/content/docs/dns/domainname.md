@@ -216,14 +216,14 @@ HOSTS.TXTファイルの問題について、2つのグラフを紹介します�
 
 次のグラフはHOSTS.TXTファイルに登録されているホストやネットワークの数の1983年から1988年までの推移を示したものです。
 
-![HOSTS.TXTの数の推移](/docs/dns/images/hosts-txt.png)
+![HOSTS.TXTの数の推移](/dns/domainname/images/hosts-txt.png)
 
 約500台だったホストが約8000台になっています。
 すでにDNSに移行した1989年の状況については、Computer History Museumの『[Internet History Of 1980s](https://www.computerhistory.org/internethistory/1980s/)』によると、1月には8万台、7月には13万台、11月には16万台のホストがインターネットにつながり、加速度的に増加していました。
 
 さらに、次のグラフはファイルサイズを示したものです。
 
-![HOSTS.TXTのファイルサイズの推移](/docs/dns/images/filesize.png)
+![HOSTS.TXTのファイルサイズの推移](/dns/domainname/images/filesize.png)
 
 1983年には約50KiBだったものが1988年には約760KiBまで増えました。このファイルを多数のホストが取得することを考えると、当時のネットワーク回線の帯域にとってはとても大きなサイズです。
 当時のネットワーク回線帯域の例として、『[Internet History Of 1980s](https://www.computerhistory.org/internethistory/1980s/)』によると1986年当時のNSFNET（全米科学財団ネットワーク）のバックボーンの帯域は56Kbpsでした。ただし、これは1987年から1988年にかけてT1（約1.5Mbps）に置き換えられました。
