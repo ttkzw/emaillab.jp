@@ -215,7 +215,7 @@ https://github.com/GoogleCloudPlatform/deploymentmanager-samples/blob/master/goo
 
 #### Terraform/OpenTofu (Amazon Route 53)
 
-```h
+```
 resource "aws_route53_record" "www" {
   zone_id = aws_route53_zone.primary.zone_id
   name    = "www.example.com"
@@ -230,7 +230,7 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/rout
 
 #### Terraform/OpenTofu (Azure DNS)
 
-```h
+```
 resource "azurerm_dns_a_record" "example" {
   name                = "test"
   zone_name           = azurerm_dns_zone.example.name
@@ -244,7 +244,7 @@ https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/
 
 #### Terraform/OpenTofu (Google Cloud DNS)
 
-```h
+```
 resource "google_dns_record_set" "a" {
   name         = "backend.${google_dns_managed_zone.prod.dns_name}"
   managed_zone = google_dns_managed_zone.prod.name
