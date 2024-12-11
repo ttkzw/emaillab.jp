@@ -4,7 +4,9 @@ sidebar:
     order: 8
 ---
 
-本記事ではDNS as Codeの実装の1つであるDNSControlについて紹介します。DNS as Codeについては下記記事をご覧ください。
+本記事は『[さくらインターネット Advent Calendar 2024](https://qiita.com/advent-calendar/2024/sakura)』16日目の記事になります。
+
+DNS as Codeの実装の1つであるDNSControlについて紹介します。DNS as Codeについては下記記事をご覧ください。
 
 - [DNS as Code](https://emaillab.jp/dns/dns-as-code/)
 
@@ -32,7 +34,7 @@ DNSControlが行うことは設定ファイルに記述されたゾーンデー�
 
 ![複数のDNSプロバイダー](/dns/dnscontrol/images/dnscontrol-multi.svg)
 
-対応しているマネージドDNSサービスプロバイダーは『[Providers](https://docs.dnscontrol.org/provider/akamaiedgedns)』に記載されています。日本国内のサービスプロバイダーとしてはさくらのクラウドが対応しています。
+対応しているマネージドDNSサービスプロバイダーは『[Providers](https://docs.dnscontrol.org/provider/akamaiedgedns)』に記載されています。日本国内のサービスプロバイダーとしてはさくらのクラウドに対応しています。
 
 注記）さくらのクラウド対応は筆者が個人的にコミュニティーサポートとしてコントリビュートしたものです。
 
@@ -47,6 +49,8 @@ DNSControlが行うことは設定ファイルに記述されたゾーンデー�
 |PowerDNS||
 
 ## 設定
+
+ここからはDNSプロバイダーとして[さくらのクラウド DNS](https://manual.sakura.ad.jp/cloud/appliance/dns/index.html)を利用した例と共に設定方法を紹介します。
 
 DNSControlの設定ファイルには次の2つがあります。
 
@@ -221,6 +225,8 @@ DNSControlではプロバイダーを開発するためのドキュメントが�
 
 ## 注意点
 
+最後に注意点を紹介します。
+
 ### リソースレコードタイプに関する補足
 
 リソースレコードタイプに関して以下の補足があります。
@@ -280,7 +286,3 @@ Biome (biome.json)の設定例を示します。
   }
 }
 ```
-
-
-
-
