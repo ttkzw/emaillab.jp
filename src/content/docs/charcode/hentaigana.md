@@ -365,6 +365,7 @@ td {
 |を|<span class=hentaigana>&#x1B11A;</span>|U+1B11A|越|
 |を|<span class=hentaigana>&#x1B11B;</span>|U+1B11B|遠|
 |を|<span class=hentaigana>&#x1B11C;</span>|U+1B11C|遠|
+|を|<span class=hentaigana>&#x1B005;</span>|U+1B005|惡|
 
 ## その他
 
