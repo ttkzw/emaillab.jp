@@ -27,7 +27,7 @@ td {
 |あ|<span class=hentaigana>&#x1B002;</span>|U+1B002|安|
 |あ|<span class=hentaigana>&#x1B003;</span>|U+1B003|愛|
 |あ|<span class=hentaigana>&#x1B004;</span>|U+1B004|阿|
-|あ,を|<span class=hentaigana>&#x1B005;</span>|U+1B005|惡|
+|あ|<span class=hentaigana>&#x1B005;</span>|U+1B005|惡|
 |い|<span class=hentaigana>&#x1B006;</span>|U+1B006|以|
 |い|<span class=hentaigana>&#x1B007;</span>|U+1B007|伊|
 |い|<span class=hentaigana>&#x1B008;</span>|U+1B008|意|
