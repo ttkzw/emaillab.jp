@@ -13,6 +13,11 @@ sidebar:
   font-optical-sizing: auto;
   font-style: normal;
 }
+td {
+  font-family: serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 </style>
 
 ||||||
