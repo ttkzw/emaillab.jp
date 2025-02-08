@@ -9,7 +9,7 @@ sidebar:
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hentaigana:wght@400..900&display=swap" rel="stylesheet">
 <style>
 .hentaigana {
-  font-family: "Noto Serif Hentaigana", serif;
+  font-family: "Noto Serif Hentaigana", "IPAmjMincho", "BabelStone Han", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -21,7 +21,7 @@ td {
 }
 </style>
 
-This page was created as an example of using a hentaigana web font, "[Noto Serif Hentaigana](https://fonts.google.com/noto/specimen/Noto+Serif+Hentaigana)".
+This page was created to test the display of hentaigana font, "[Noto Serif Hentaigana](https://fonts.google.com/noto/specimen/Noto+Serif+Hentaigana)".
 
 ## あ行
 
@@ -631,8 +631,7 @@ This page was created as an example of using a hentaigana web font, "[Noto Serif
 |ん|<span class=hentaigana>&#x1B11E;</span>|U+1B11E|无|
 
 
-
-## 参考文献
+## References
 
 - [学術情報交換用変体仮名](https://cid.ninjal.ac.jp/kana/list/)
 - [Unicode Code Charts](https://www.unicode.org/Public/UCD/latest/charts/)

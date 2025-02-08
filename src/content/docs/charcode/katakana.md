@@ -9,7 +9,12 @@ sidebar:
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hentaigana:wght@200..900&display=swap" rel="stylesheet">
 <style>
 .hentaigana {
-  font-family: "Noto Serif Hentaigana", serif;
+  font-family: "Noto Serif Hentaigana", "IPAmjMincho", "BabelStone Han", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.smallkana {
+  font-family: "BabelStone Han", serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -19,6 +24,12 @@ td {
   font-style: normal;
 }
 </style>
+
+This page was created to test the display of archaic kana letter fonts.
+This page uses the web font, "[Noto Serif Hentaigana](https://fonts.google.com/noto/specimen/Noto+Serif+Hentaigana)".
+You can install [BabelStone Han](https://www.babelstone.co.uk/Fonts/Han.html) to display small kana letters as well.
+
+Characters enclosed in brackets are archaic kana letters.
 
 ||||||
 |:---:|:---:|:---:|:---:|:---:|
@@ -56,7 +67,7 @@ td {
 ||||||
 |:---:|:---:|:---:|:---:|:---:|
 |&#x30A1;(U+30A1)|&#x30A3;(U+30A3)|&#x30A5;(U+30A5)|&#x30A7;(U+30A7)|&#x30A9;(U+30A9)|
-|&#x30F5;(U+30F5)|||&#x30F6;(U+30F6)|(&#x1B155;)(U+1B155)|
+|&#x30F5;(U+30F5)|||&#x30F6;(U+30F6)|(<span class="smallkana">&#x1B155;</span>)(U+1B155)|
 ||||||
 |||&#x30C3;(U+30C3)|||
 ||||||
@@ -64,8 +75,8 @@ td {
 ||||||
 |&#x30E3;(U+30E3)||&#x30E5;(U+30E5)||&#x30E7;(U+30E7)|
 ||||||
-|&#x30EE;(U+30EE)|(&#x1B164;)(U+1B164)||(&#x1B165;)(U+1B165)|(&#x1B166;)(U+1B166)|
-|(&#x1B167;)(U+1B167)|||||
+|&#x30EE;(U+30EE)|(<span class="smallkana">&#x1B164;</span>)(U+1B164)||(<span class="smallkana">&#x1B165;</span>)(U+1B165)|(<span class="smallkana">&#x1B166;</span>)(U+1B166)|
+|(<span class="smallkana">&#x1B167;</span>)(U+1B167)|||||
 
 ### OTHERS
 
@@ -77,3 +88,8 @@ td {
 |&#x30FD;|U+30FD|KATAKANA ITERATION MARK|
 |&#x30FE;|U+30FE|KATAKANA VOICED ITERATION MARK|
 |&#x30FF;|U+30FF|KATAKANA DIGRAPH KOTO|
+
+
+## References
+
+- [Unicode Code Charts](https://www.unicode.org/Public/UCD/latest/charts/)
